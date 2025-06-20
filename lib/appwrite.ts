@@ -21,6 +21,7 @@ export const account = new Account(client);
 export async function login() {
   try {
     const redirectUri = Linking.createURL("/");
+    console.log("Redirect URI:", redirectUri);
 
     const response = await account.createOAuth2Token(
       OAuthProvider.Google,

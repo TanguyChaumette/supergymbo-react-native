@@ -1,20 +1,34 @@
-import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import SelectionCards from "@/components/SelectionCards";
+import images from "@/constants/images";
+import { Image, SafeAreaView, Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text className="font-bold text-lg font-doto">Welcome to my app</Text>
-      <Link href="/sign-in">Sign In</Link>
-      <Link href="/explore">Explore</Link>
-      <Link href="/profile">Profile</Link>
-      <Link href="/workout/1">Workout</Link>
-    </View>
+    <SafeAreaView className="bg-offwhite">
+      <View className="flex h-full gap-2 items-center p-2 px-3">
+        <Image source={images.icontransparent} className="size-16 mb-6" />
+
+        <View className="justify-center items-center">
+          <Text className="font-inter text-primary text-center tracking-tightest text-[36px] mb-6">
+            How long can you{" "}
+            <Text className="font-doto tracking-tightest">workout</Text> today?
+          </Text>
+          <View className="flex-row flex-wrap justify-center gap-4">
+            <View className="grow">
+              <SelectionCards title="10mn" catchphrase="Energizer" />
+            </View>
+            <View className="grow">
+              <SelectionCards title="20mn" catchphrase="Get Movin'" />
+            </View>
+            <View className="grow">
+              <SelectionCards title="30mn" catchphrase="Just Enough" />
+            </View>
+            <View className="grow">
+              <SelectionCards title="40mn" catchphrase="Full Session" />
+            </View>
+          </View>
+        </View>
+      </View>
+    </SafeAreaView>
   );
 }
