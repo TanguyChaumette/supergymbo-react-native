@@ -1,4 +1,5 @@
 import icons from "@/constants/icons";
+import { BlurView } from "expo-blur";
 import { Tabs } from "expo-router";
 import React from "react";
 import { Image, View } from "react-native";
@@ -28,10 +29,21 @@ const TabsLayout = () => {
       screenOptions={{
         tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: "white",
           position: "absolute",
           minHeight: 70,
+          borderTopWidth: 0,
         },
+        tabBarBackground: () => (
+          <BlurView
+            tint="light"
+            intensity={72} // adjust for stronger/softer blur
+            style={{
+              flex: 1,
+              backgroundColor: "rgba(255, 255, 255, 0.1)", // ensure opacity still applies
+              backdropFilter: "blur(64)", // web only; for native, intensity controls blur
+            }}
+          />
+        ),
       }}
     >
       <Tabs.Screen
@@ -40,11 +52,7 @@ const TabsLayout = () => {
           title: "Home",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon
-              icon={icons.weight}
-              focused={focused}
-              title="Home"
-            ></TabIcon>
+            <TabIcon icon={icons.weight} focused={focused} title="Home" />
           ),
         }}
       />
@@ -54,11 +62,7 @@ const TabsLayout = () => {
           title: "History",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon
-              icon={icons.history}
-              focused={focused}
-              title="Profile"
-            ></TabIcon>
+            <TabIcon icon={icons.history} focused={focused} title="History" />
           ),
         }}
       />
@@ -68,11 +72,7 @@ const TabsLayout = () => {
           title: "Explore",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon
-              icon={icons.search}
-              focused={focused}
-              title="Explore"
-            ></TabIcon>
+            <TabIcon icon={icons.search} focused={focused} title="Explore" />
           ),
         }}
       />
@@ -82,11 +82,7 @@ const TabsLayout = () => {
           title: "Profile",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon
-              icon={icons.profile}
-              focused={focused}
-              title="Profile"
-            ></TabIcon>
+            <TabIcon icon={icons.profile} focused={focused} title="Profile" />
           ),
         }}
       />

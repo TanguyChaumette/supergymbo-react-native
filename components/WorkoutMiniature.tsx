@@ -17,36 +17,44 @@ const WorkoutMiniature = (props) => {
 
   return (
     <TouchableOpacity>
-      <View className="bg-white w-full flex p-4 py-8 justify-between shadow-xs">
-        <View className="flex flex-row items-center jutify-between gap-8 pb-6">
-          <Text className="font-inter text-primary tracking-tightest text-[20px]">
+      <View className="bg-white min-w-full flex p-4 py-4 pb-6 justify-between shadow-xs rounded-2xl">
+        <View className="flex flex-row items-center jutify-between gap-1 pb-6">
+          <Text className="font-inter text-primary tracking-tightest text-[14px] px-4 py-3 rounded-2xl border border-darkgray">
             {duration}
           </Text>
-          <Text className="font-inter text-primary tracking-tightest text-[20px]">
+          <Text className="font-inter text-primary tracking-tightest text-[14px] px-4 py-3 rounded-2xl border border-darkgray">
             {type}
           </Text>
-          <View className="flex flex-row">
-            <Image source={icons.heart} className="size-8"></Image>
-            <Image source={icons.check} className="size-8"></Image>
+          <View className="flex flex-row ml-auto gap-2">
+            <Image
+              source={icons.check}
+              className="size-8"
+              tintColor={"#191919"}
+            ></Image>
+            <Image
+              source={icons.heart}
+              className="size-8"
+              tintColor={"#191919"}
+            ></Image>
           </View>
         </View>
-        <Text className="font-inter text-primary tracking-tightest text-[24px] line-clamp-3 pb-6">
+        <Text className="font-doto text-primary tracking-tightest text-[28px] line-clamp-2 pb-6">
           {title}
         </Text>
-        <View className="flex flex-row gap-4 pb-2">
-          <Text className="font-inter text-primary tracking-tightest text-[16px]">
+        <View className="flex flex-row justify-between pb-2">
+          <Text className="font-inter tracking-tightest text-[16px] text-darkgray">
             {format}
           </Text>
-          <Text className="font-inter text-primary tracking-tightest text-[16px]">
+          <Text className="font-inter tracking-tightest text-[16px] text-darkgray">
             |
           </Text>
-          <Text className="font-inter text-primary tracking-tightest text-[16px]">
+          <Text className="font-inter tracking-tightest text-[16px] text-darkgray">
             {workDuration}
           </Text>
-          <Text className="font-inter text-primary tracking-tightest text-[16px]">
+          <Text className="font-inter tracking-tightest text-[16px] text-darkgray">
             |
           </Text>
-          <Text className="font-inter text-primary tracking-tightest text-[16px]">
+          <Text className="font-inter tracking-tightest text-[16px] text-darkgray">
             {breakDuration}
           </Text>
         </View>

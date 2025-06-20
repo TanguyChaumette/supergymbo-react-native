@@ -11,9 +11,12 @@ export default function Index() {
         <View className="justify-center items-center">
           <Text className="font-inter text-primary text-center tracking-tightest text-[36px] mb-6">
             How long can you{" "}
-            <Text className="font-doto tracking-tightest">workout</Text> today?
+            <Text className="font-doto tracking-tightest text-[39px]">
+              workout
+            </Text>{" "}
+            today?
           </Text>
-          <View className="flex-row flex-wrap justify-center gap-4">
+          <View className="flex-row flex-wrap justify-center gap-2">
             <View className="grow">
               <SelectionCards title="10mn" catchphrase="Energizer" />
             </View>

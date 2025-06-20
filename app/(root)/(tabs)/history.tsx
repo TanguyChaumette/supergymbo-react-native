@@ -10,9 +10,11 @@ export default function History() {
         <View className="justify-center items-center">
           <Text className="font-inter text-primary text-center tracking-tightest text-[36px] mb-6">
             Your last{" "}
-            <Text className="font-doto tracking-tightest">workouts</Text>
+            <Text className="font-doto tracking-tightest text-[39px]">
+              workouts
+            </Text>
           </Text>
-          <View className="flex gap-4">
+          <View className="flex gap-2">
             <WorkoutMiniature
               duration="20mn"
               type="Full Body"
@@ -74,5 +76,3 @@ export default function History() {
     </SafeAreaView>
   );
 }
-
-export default History;
